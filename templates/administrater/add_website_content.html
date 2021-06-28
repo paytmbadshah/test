@@ -1,0 +1,30 @@
+{% extends 'administrater/base.html' %}
+
+{%  block body_data %}
+<br>
+<div class="container-fluid shadow p-4" style="max-width: 500px;"><br>
+    <form action="{% url 'add_website_content' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4 class="text-info">Add Your Website Content!!</h4><br>
+        <select class="form-select" aria-label="" name="website_id" required>
+         {% for data in data.web_data %}
+            <option value="{{ data.id }}">{{ data.web_name }}</option>
+            {% endfor %}
+        </select>
+    <br>
+    <lable>Image 1</lable>
+        <input type="file" class="form-control " name="image1" placeholder="Iamge 1" required><br>
+    <lable>Image 2</lable>
+        <input type="file" class="form-control " name="image2" placeholder="Iamge 1" required><br>
+    <lable>Image 3</lable>
+        <input type="file" class="form-control " name="image3" placeholder="Iamge 1" required><br>
+    <lable>Image 4</lable>
+        <input type="file" class="form-control " name="image4" placeholder="Iamge 1" required><br>
+    <lable>Image 5</lable>
+        <input type="file" class="form-control " name="image5" placeholder="Iamge 1" required><br>
+    <lable>Image 6</lable>
+        <input type="file" class="form-control " name="image6" placeholder="Iamge 1" required><br>
+        <input type="submit" class="btn btn-danger pull-right " style="padding-left: 40px;padding-right: 40px;" value="Add" ><br><br>
+    </form>
+</div>
+{% endblock %}

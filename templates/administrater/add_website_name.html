@@ -1,0 +1,13 @@
+{% extends 'administrater/base.html' %}
+
+{%  block body_data %}
+<br>
+<div class="container-fluid shadow p-4" style="max-width: 500px;"><br>
+    <form action="{% url 'add_website_name' %}" method="post">
+        {% csrf_token %}
+        <h4 class="text-info">Add Your Website Name Here</h4><br>
+        <input type="text" class="form-control " name="web_name" placeholder="Enter Website Name"><br>
+        <input type="submit" class="btn btn-danger pull-right " style="padding-left: 40px;padding-right: 40px;" value="Add" ><br><br>
+    </form>
+</div>
+{% endblock %}
