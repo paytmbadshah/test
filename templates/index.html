@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <title> !! {{ data.web_name }} !!</title>
+    <style>
+        body{
+            background:#eee;
+        }
+    </style>
+  </head>
+  <body>
+
+  <!-- Start Header -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">{{ data.web_name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            {% for item in data.menu %}
+                <li class="nav-item">
+                  <a class="nav-link" href="#">{{ item.menu_item }}</a>
+                </li>
+              {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!-- End Header -->
+
+  <!-- Start Banner -->
+  <center>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel bg-dark"  style="max-width: 95%;">
+          <div class="carousel-inner">
+              {% for a in data.banner %}
+                <div class="carousel-item active">
+                  <img src="{{ a.ban_image1.url }}" class="d-block w-100" alt="..." style="max-height: 550px;">
+                </div>
+                <div class="carousel-item ">
+                  <img src="{{ a.ban_image2.url }}" class="d-block w-100" alt="..." style="max-height: 550px;">
+                </div>
+                <div class="carousel-item ">
+                  <img src="{{ a.ban_image3.url }}" class="d-block w-100" alt="..." style="max-height: 550px;">
+                </div>
+            {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+    </div>
+  </center>
+  <!-- End Banner -->
+  <br>
+
+{% for p in data.body_content %}
+<!-- Start Body Content -->
+    <center>
+      <div class="row " style="max-width: 95%;">
+          <div class="col-lg-6 p-1"><image style="height:100%;width:100%;"  src="{{ p.ban_image1.url }}"/></div>
+          <div class="col-lg-6 p-1"><image style="height:100%;width:100%;" src="{{ p.ban_image2.url }}"/></div>
+      </div>
+    </center>
+    <center>
+      <div class="row " style="max-width: 95%;">
+          <div class="col-lg-6 p-1"><image style="height:100%;width:100%;"  src="{{ p.ban_image3.url }}"/></div>
+          <div class="col-lg-6 p-1"><image style="height:100%;width:100%;" src="{{ p.ban_image4.url }}"/></div>
+      </div>
+    </center>
+    <center>
+      <div class="row " style="max-width: 95%;">
+          <div class="col-lg-6 p-1"><image style="height:100%;width:100%;"  src="{{ p.ban_image5.url }}"/></div>
+          <div class="col-lg-6 p-1"><image style="height:100%;width:100%;" src="{{ p.ban_image6.url }}"/></div>
+      </div>
+    </center>
+  <!-- Start Body Content -->
+{% endfor %}
+
+
+  <!-- Start Footer -->
+  {% for p in data.footer %}
+    <div class="container-fluid bg-secondary text-light p-5">
+        <center>
+      <div class="row " style="max-width: 95%;">
+          <div class="col-lg-4 p-2"> Mobile Number : <b>+91{{ p.contact_number }}</b></div>
+          <div class="col-lg-4 p-1"> Email Id : <b>{{ p.email_id }}</b></div>
+          <div class="col-lg-4 p-1"> Address : <b>{{ p.address}}</b> </div>
+      </div>
+
+    </center>
+    </div>
+  {% endfor %}
+  <!-- Start Footer -->
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
