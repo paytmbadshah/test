@@ -24,7 +24,7 @@ mimetypes.add_type('text/css','.css',True)
 SECRET_KEY = 'django-insecure-z@3%s47(w2epwy#@n+1x@^&edgul@k88$-_s@_de9wv4nl%q%^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
 'whitenoise.runserver_nostatic',
+    'administrater',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
