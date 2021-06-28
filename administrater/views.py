@@ -9,7 +9,7 @@ from ecome.models import website_settings, website_menu, website_banner_image, w
 
 def login(request):
     if 'username' in request.session:
-        return redirect('dashboard')
+        return redirect(home)
     else:
         if request.method =="POST":
             username = request.POST['username']
