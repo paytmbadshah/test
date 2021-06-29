@@ -96,7 +96,7 @@ def add_website_content(request):
         ban_image4 = request.FILES['image4']
         ban_image5 = request.FILES['image5']
         ban_image6 = request.FILES['image6']
-        data = website_cont ent_image(ban_image1=ban_image1,ban_image2=ban_image2,ban_image3=ban_image3,ban_image4=ban_image4,ban_image5=ban_image5,ban_image6=ban_image6,web_name = web_name_get)
+        data = website_content_image(ban_image1=ban_image1,ban_image2=ban_image2,ban_image3=ban_image3,ban_image4=ban_image4,ban_image5=ban_image5,ban_image6=ban_image6,web_name = web_name_get)
         data.save()
         messages.success(request, 'Content Added Successfully')
         return  redirect(add_website_content)
